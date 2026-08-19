@@ -1,6 +1,5 @@
 
 
-using Carter;
 using FluentValidation;
 using LiteBus.Commands;
 using LiteBus.Extensions.Microsoft.DependencyInjection;
@@ -25,7 +24,7 @@ namespace Store.Extensions
             return services;
         }
 
-        public static IServiceCollection AddCommonFeaturesServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddCommonFeaturesServices(this IServiceCollection services)
         {
             var applicationLayerAssembly = typeof(Program).Assembly;
 
