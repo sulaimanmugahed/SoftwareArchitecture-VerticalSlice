@@ -1,20 +1,20 @@
 using LiteBus.Queries.Abstractions;
 using Microsoft.EntityFrameworkCore;
-using Store.Common.Persistence;
+using Store.Infrastructure.Persistence;
 
 
 namespace Store.Features.Products.GetList
 {
     public class GetProductListQueryHandler(
         AppDbContext dbContext
-    ) : IQueryHandler<GetProductListQuery, List<ProductDto>>
+    ) : IQueryHandler<GetProductListQuery, List<ProductListItemDto>>
     {
-        public async Task<List<ProductDto>> HandleAsync(GetProductListQuery message, CancellationToken cancellationToken = default)
+        public async Task<List<ProductListItemDto>> HandleAsync(GetProductListQuery message, CancellationToken cancellationToken = default)
         {
             var products = await dbContext.Products.ToListAsync();
 
             return products.Select(p =>
-            new ProductDto(p.Id, p.Name, p.Price, p.Quantity))
+            new ProductListItemDto(p.Id, p.Name, p.Price, p.Quantity))
             .ToList();
         }
     }

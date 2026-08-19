@@ -1,5 +1,5 @@
 using LiteBus.Commands.Abstractions;
-using Store.Common.Persistence;
+using Store.Infrastructure.Persistence;
 using Store.Domain;
 
 

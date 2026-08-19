@@ -1,10 +1,15 @@
 using Carter;
 using Scalar.AspNetCore;
-using Store.Common.Extensions;
+using Store.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCommonServices(builder.Configuration);
+
+builder.Services.AddOpenApi();
+builder.Services.AddCarter();
+
+builder.Services.AddCommonFeaturesServices(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

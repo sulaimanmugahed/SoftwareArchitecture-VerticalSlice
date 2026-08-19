@@ -1,5 +1,5 @@
 using LiteBus.Queries.Abstractions;
-using Store.Common.Persistence;
+using Store.Infrastructure.Persistence;
 
 
 namespace Store.Features.Customers.Get

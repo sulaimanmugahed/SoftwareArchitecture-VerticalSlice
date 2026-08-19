@@ -1,6 +1,6 @@
 
 using LiteBus.Commands.Abstractions;
-using Store.Common.Persistence;
+using Store.Infrastructure.Persistence;
 
 namespace Store.Features.Products.Supply
 {
